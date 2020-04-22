@@ -5,8 +5,12 @@ const base = require('./base');
 
 module.exports = merge(base, {
   mode: 'production',
+  entry: './src/index.js',
+
   output: {
-    filename: 'bundle.min.js',
+    path: path.resolve(__dirname, '../build'),
+    publicPath: '/build/',
+    filename: 'main.bundle.[contenthash].js'
   },
   devtool: false,
   performance: {
