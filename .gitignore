@@ -1,0 +1,21 @@
+# System and IDE files
+Thumbs.db
+.DS_Store
+.idea
+*.suo
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+# Vendors
+node_modules/
+
+# Build
+dist/
+/npm-debug.log
