@@ -18,18 +18,8 @@ module.exports = {
         },
       },
       {
-        test: /\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader',
-        ],
-      },
-      {
         test: /\.html$/,
-        use: [
-          'html-loader',
-        ],
+        use: 'html-loader',
       },
       {
         test: [/\.vert$/, /\.frag$/],
@@ -37,27 +27,20 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpe?g|gif|xml)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[hash].[ext]',
-            outputPath: 'img',
-          },
-        },
+        use: 'file-loader',
       },
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({
+      root: path.resolve(__dirname, "../")
+    }),
     new webpack.DefinePlugin({
       CANVAS_RENDERER: JSON.stringify(true),
       WEBGL_RENDERER: JSON.stringify(true),
     }),
     new HtmlWebpackPlugin({ 
       template: './src/template.html' 
-    }),
-    new MiniCssExtractPlugin({ 
-      filename: '[name].[contenthash].css' 
     }),
   ],
 };

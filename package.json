@@ -14,6 +14,7 @@
   },
   "author": "Christian Otieno <iamchrisotieno@gmail.com>",
   "license": "MIT",
+  "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
   "bugs": {
     "url": "https://github.com/christianotieno/platform-game/issues"
   },
@@ -38,9 +39,11 @@
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
+    "webpack-license-plugin": "^4.1.1",
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "jsdom-quokka-plugin": "^1.0.15",
     "phaser": "^3.22.0"
   }
 }
