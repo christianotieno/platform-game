@@ -1,8 +1,8 @@
 import 'phaser';
 
-class PreloaderScene extends Phaser.Scene {
+export default class PreloaderScene extends Phaser.Scene {
   constructor() {
-    super('preloader');
+    super('Preloader');
   }
 
   preload() {
@@ -57,9 +57,5 @@ class PreloaderScene extends Phaser.Scene {
       frameRate: 15,
       repeat: -1,
     });
-
-    this.scene.start('PlayGame');
   }
 }
-
-export default PreloaderScene;
