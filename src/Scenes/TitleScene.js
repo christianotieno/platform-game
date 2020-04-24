@@ -1,4 +1,7 @@
-import 'phaser';
+/* eslint-disable class-methods-use-this */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable no-undef */
+import Phaser from 'phaser';
 import config from '../Config/config';
 import Button from '../Objects/Button';
 
@@ -8,8 +11,10 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
+    this.gameName = this.add.text(200, 100, 'lulu', { fontSize: '32px', fill: '#fff' });
+
     // Game
-    this.gameButton = new Button(this, config.width / 2, config.height / 2 - 100, 'blueButton1', 'blueButton2', 'Play', 'Game');
+    this.gameButton = new Button(this, config.width / 2, config.height / 2 - 100, 'blueButton1', 'blueButton2', 'Play', 'PreGame');
 
     // Options
     this.optionsButton = new Button(this, config.width / 2, config.height / 2, 'blueButton1', 'blueButton2', 'Options', 'Options');
@@ -26,15 +31,29 @@ export default class TitleScene extends Phaser.Scene {
     }
   }
 
+  ready() {
+    this.load.on('complete', () => {
+      gameName.destroy();
+      gameButton.destroy();
+      optionsButton.destroy();
+      creditsButton.destroy();
+      this.ready();
+    });
+  }
+
+
   centerButton(gameObject, offset = 0) {
-    Phaser.Display.Align.In.Center(gameObject, this.add.zone(
-      config.width / 2, config.height / 2 - offset * 100, config.width, config.height,
-    ));
+    Phaser.Display.Align.In.Center(
+      gameObject,
+      this.add.zone(config.width / 2, config.height / 2 - offset * 100,
+        config.width, config.height),
+    );
   }
 
   centerButtonText(gameText, gameButton) {
     Phaser.Display.Align.In.Center(
-      gameText, gameButton,
+      gameText,
+      gameButton,
     );
   }
 }
