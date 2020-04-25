@@ -11,10 +11,10 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
-    this.gameName = this.add.text(200, 100, 'lulu', { fontSize: '32px', fill: '#fff' });
+    this.gameName = this.add.text(80, 100, 'Roshan, the treasure hunter', { fontSize: '40px', fill: '#fff' });
 
     // Game
-    this.gameButton = new Button(this, config.width / 2, config.height / 2 - 100, 'blueButton1', 'blueButton2', 'Play', 'PreGame');
+    this.gameButton = new Button(this, config.width / 2, config.height / 2 - 100, 'blueButton1', 'blueButton2', 'Play', 'aboutGame');
 
     // Options
     this.optionsButton = new Button(this, config.width / 2, config.height / 2, 'blueButton1', 'blueButton2', 'Options', 'Options');

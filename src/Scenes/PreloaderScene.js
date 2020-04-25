@@ -84,9 +84,27 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('blueButton1', '../src/assets/ui/blue_button02.png');
     this.load.image('blueButton2', '../src/assets/ui/blue_button03.png');
     this.load.image('checkedBox', '../src/assets/ui/blue_boxCheckmark.png');
-    this.load.spritesheet('player', '../src/assets/images/player.png', {
-      frameWidth: 24,
+    this.load.image('background', './src/assets/images/background.jpg');
+
+    // spritesheets
+    this.load.spritesheet('roshan', './src/assets/images/roshan.png', {
+      frameWidth: 32,
       frameHeight: 48,
+    });
+
+    this.load.spritesheet('platform', './src/assets/images/platform.png', {
+      frameWidth: 400,
+      frameHeight: 32,
+    });
+
+    this.load.spritesheet('coin', './src/assets/images/coin.png', {
+      frameWidth: 20,
+      frameHeight: 20,
+    });
+
+    this.load.spritesheet('fire', './src/assets/images/fire.png', {
+      frameWidth: 40,
+      frameHeight: 32,
     });
 
     this.load.spritesheet('bomb', '../src/assets/images/bomb.png', {
@@ -95,13 +113,8 @@ export default class PreloaderScene extends Phaser.Scene {
     });
 
     this.load.spritesheet('star', '../src/assets/images/star.png', {
-      frameWidth: 20,
-      frameHeight: 20,
-    });
-
-    this.load.spritesheet('background', '../src/assets/images/background.jpg', {
-      frameWidth: 512,
-      frameHeight: 512,
+      frameWidth: 24,
+      frameHeight: 22,
     });
   }
 

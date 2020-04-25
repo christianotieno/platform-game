@@ -1,12 +1,22 @@
+/* eslint-disable no-undef */
 import Phaser from 'phaser';
 
 const config = {
   type: Phaser.AUTO,
-  width: 1334,
-  height: 750,
-  backgroundColor: 0x0c88c7,
+  parent: 'phaser-game',
+  dom: {
+    createContainer: true,
+  },
+  width: 800,
+  height: 600,
   physics: {
     default: 'arcade',
+    arcade: {
+      gravity: {
+        y: 500,
+      },
+      debug: false,
+    },
   },
 };
 
