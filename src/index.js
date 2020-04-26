@@ -11,7 +11,6 @@ import GameScene from './Scenes/GameScene';
 import aboutGameScene from './Scenes/aboutGameScene';
 import PreloaderScene from './Scenes/PreloaderScene';
 
-let game;
 class Game extends Phaser.Game {
   constructor() {
     super(config);
@@ -28,24 +27,4 @@ class Game extends Phaser.Game {
   }
 }
 
-const resize = () => {
-  const canvas = document.querySelector('canvas');
-  const windowWidth = window.innerWidth;
-  const windowHeight = window.innerHeight;
-  const windowRatio = windowWidth / windowHeight;
-  const gameRatio = game.config.width / game.config.height;
-  if (windowRatio < gameRatio) {
-    canvas.style.width = `${windowWidth}px`;
-    canvas.style.height = `${windowWidth / gameRatio}px`;
-  } else {
-    canvas.style.width = `${windowHeight * gameRatio}px`;
-    canvas.style.height = `${windowHeight}px`;
-  }
-};
-
-window.onload = function () {
-  window.addEventListener('resize', resize, false);
-  window.game = new Game();
-  window.focus();
-  resize();
-};
+window.game = new Game();

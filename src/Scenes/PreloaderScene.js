@@ -79,7 +79,7 @@ export default class PreloaderScene extends Phaser.Scene {
 
     // load assets needed in our game
     this.load.image('box', '../src/assets/ui/grey_box.png');
-    this.load.audio('bgMusic', ['../src/assets/music/TownTheme.mp3']);
+    this.load.audio('bgMusic', ['../src/assets/audio/TownTheme.mp3']);
     this.load.image('platform', '../src/assets/images/platform.png');
     this.load.image('blueButton1', '../src/assets/ui/blue_button02.png');
     this.load.image('blueButton2', '../src/assets/ui/blue_button03.png');
@@ -121,6 +121,7 @@ export default class PreloaderScene extends Phaser.Scene {
   ready() {
     this.readyCount += 1;
     if (this.readyCount === 1) {
+      // Load Title Scene
       this.scene.start('Title');
     }
   }
