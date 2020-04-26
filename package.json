@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "jsdom-quokka-plugin": "^1.0.15",
+    "milsymbol": "^2.0.0",
     "phaser": "^3.22.0"
   }
 }

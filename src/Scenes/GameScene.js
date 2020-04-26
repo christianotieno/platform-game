@@ -9,9 +9,9 @@ export default class GameScene extends Phaser.Scene {
     this.score = 0;
     this.gameOver = false;
   }
+
   // ==============================================================================================
   // Create
-
   create() {
     const background = this.add.image(0, 0, 'background');
     background.setOrigin(0, 0);
@@ -50,12 +50,9 @@ export default class GameScene extends Phaser.Scene {
     this.roshan = this.physics.add.sprite(300, 450, 'roshan');
     this.roshan.setCollideWorldBounds(true);
     this.roshan.setBounce(0.2);
-
-    // implementing roshan's platform colliders
     this.physics.add.collider(this.roshan, this.platforms);
     this.physics.add.collider(this.roshan, this.movingPlatform);
 
-    // setting up roshan's animation
     this.anims.create({
       key: 'left',
       frames: this.anims.generateFrameNumbers('roshan', { start: 7, end: 5 }),
@@ -95,10 +92,10 @@ export default class GameScene extends Phaser.Scene {
 
     this.physics.add.collider(this.coins, this.platforms);
     this.physics.add.collider(this.coins, this.movingPlatform);
-    this.physics.add.overlap(this.roshan, this.coins, this.collectCoin, null, this);
+    this.physics.add.overlap(this.roshan, this.coins, this.collectCoins, null, this);
   }
 
-  collectCoin(roshan, coin) {
+  collectCoins(roshan, coin) {
     coin.disableBody(true, true);
     this.score += 10;
     this.scoreText.setText(`Score: ${this.score}`);
@@ -119,14 +116,17 @@ export default class GameScene extends Phaser.Scene {
     this.physics.add.collider(this.bombs, this.platforms);
     this.physics.add.collider(this.bombs, this.movingPlatforms);
     this.physics.add.collider(this.roshan, this.bombs, this.hitBomb, null, this);
-    const hitBomb = (roshan, bomb) => {
-      this.physics.pause();
-      roshan.setTint(0xff0000);
-      roshan.anims.play('turn');
-      this.gameOver = true;
-      this.gameOverText.visible = true;
-    };
   }
+
+  hitBomb(roshan, bomb) {
+    this.physics.pause();
+    roshan.setTint(0xff0000);
+    roshan.anims.play('turn');
+    this.gameOver = true;
+    this.gameOverText.visible = true;
+    this.scene.start('GameOver');
+  }
+
 
   // ===============================================================================================
   // Update

@@ -1,5 +1,17 @@
 # platform-game
 
+## Getting Started
+
+This project is configured to be as simple as possible; build, deploy, and play with all with npm.
+
+### Build Dependencies 🚧
+
+The only dependencies are NodeJS & npm. Any NodeJS LTS version will work. Simply clone this repo and run npm install.
+
+### Play The Game 🕹️
+
+Just run `npm start` and go to `localhost:8080` in your favorite web browser.
+
 ## Game Development Guidelines & Timelines
 
 | TIMELINE    |  TODO  |  DESCRIPTION  |    OUTCOME   |  STATUS   |

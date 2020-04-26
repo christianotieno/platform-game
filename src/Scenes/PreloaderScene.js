@@ -102,26 +102,15 @@ export default class PreloaderScene extends Phaser.Scene {
       frameHeight: 20,
     });
 
-    this.load.spritesheet('fire', './src/assets/images/fire.png', {
-      frameWidth: 40,
-      frameHeight: 32,
-    });
-
     this.load.spritesheet('bomb', '../src/assets/images/bomb.png', {
       frameWidth: 40,
       frameHeight: 70,
-    });
-
-    this.load.spritesheet('star', '../src/assets/images/star.png', {
-      frameWidth: 24,
-      frameHeight: 22,
     });
   }
 
   ready() {
     this.readyCount += 1;
     if (this.readyCount === 1) {
-      // Load Title Scene
       this.scene.start('Title');
     }
   }
