@@ -2,13 +2,19 @@
 /* eslint-disable import/no-unresolved */
 import Phaser from 'phaser';
 
+function randomInt(min, max) {
+  return Math.floor(Math.random()
+  * (Math.floor(max)
+  - Math.ceil(min)))
+  + Math.ceil(min);
+}
 export default class GameScene extends Phaser.Scene {
   constructor() {
     super('Game');
 
     this.score = 0;
     this.gameOver = false;
-    this.initialTime = 15;
+    this.initialTime = 30;
     this.timerText = '';
     this.timedEvent = '';
   }
@@ -24,14 +30,8 @@ export default class GameScene extends Phaser.Scene {
     this.createRoshan();
     this.createCursor();
     this.createCoins();
-    this.createBombs();
 
     this.scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
-    this.gameOverText = this.add.text(230, 260, 'Game Over', { fontSize: '64px', fill: '#000' });
-    this.gameOverText.setOrigin(0, 0);
-    this.gameOverText.visible = false;
-
-
     this.timerText = this.add.text(0, 100, `Countdown: ${this.initialTime}`, { fill: '#fff' });
 
     const onEvent = () => {
@@ -41,7 +41,7 @@ export default class GameScene extends Phaser.Scene {
       }
       while (this.initialTime < 0);
       if (this.initialTime === 0) {
-        this.gameOver = true; this.gameOverText.visible = true;
+        this.scene.start('GameOver');
       }
     };
 
@@ -100,16 +100,20 @@ export default class GameScene extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys();
   }
 
-  //
+  // coin generation
   createCoins() {
     this.coins = this.physics.add.group({
       key: 'coin',
-      repeat: 12,
-      setXY: { x: 12, y: 0, stepX: 70 },
+      repeat: randomInt(12, 18),
+      setXY: {
+        x: randomInt(0, 200),
+        y: 0,
+        stepX: randomInt(50, 100),
+      },
     });
 
     this.coins.children.iterate((child) => {
-      child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
+      child.setBounceY(0); child.setCollideWorldBounds(true);
     });
 
     this.physics.add.collider(this.coins, this.platforms);
@@ -117,38 +121,18 @@ export default class GameScene extends Phaser.Scene {
     this.physics.add.overlap(this.roshan, this.coins, this.collectCoins, null, this);
   }
 
+
   collectCoins(roshan, coin) {
     coin.disableBody(true, true);
     this.score += 10;
     this.scoreText.setText(`Score: ${this.score}`);
+
     if (this.coins.countActive(true) === 0) {
       this.coins.children.iterate((child) => {
-        child.enableBody(true, child.x, 0, true, true);
+        child.enableBody(true, randomInt(0, 800), 0, true, true);
       });
-      const x = (roshan.x < 400) ? Phaser.Math.Between(400, 800) : Phaser.Math.Between(0, 400);
-      const bomb = this.bombs.create(x, 16, 'bomb');
-      bomb.setBounce(1);
-      bomb.setCollideWorldBounds(true);
-      bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
     }
   }
-
-  createBombs() {
-    this.bombs = this.physics.add.group();
-    this.physics.add.collider(this.bombs, this.platforms);
-    this.physics.add.collider(this.bombs, this.movingPlatforms);
-    this.physics.add.collider(this.roshan, this.bombs, this.hitBomb, null, this);
-  }
-
-  hitBomb(roshan, bomb) {
-    this.physics.pause();
-    roshan.setTint(0xff0000);
-    roshan.anims.play('turn');
-    this.gameOver = true;
-    this.gameOverText.visible = true;
-    this.scene.start('GameOver');
-  }
-
 
   // ===============================================================================================
   // Update

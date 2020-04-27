@@ -20,3 +20,4 @@ node_modules/
 dist/
 /npm-debug.log
 dist/bundle.min.js.LICENSE.txt
+src/Scenes/code.js
