@@ -8,6 +8,9 @@ export default class GameScene extends Phaser.Scene {
 
     this.score = 0;
     this.gameOver = false;
+    this.initialTime = 15;
+    this.timerText = '';
+    this.timedEvent = '';
   }
 
   // ==============================================================================================
@@ -23,11 +26,27 @@ export default class GameScene extends Phaser.Scene {
     this.createCoins();
     this.createBombs();
 
+    this.timerText = this.add.text(0, 100, `Countdown: ${this.initialTime}`, { fill: '#fff' });
+
+    const onEvent = () => {
+      this.initialTime -= 1;
+      this.timerText.setText(`Countdown: ${this.initialTime}`);
+      if (this.initialTime === 0) {
+        this.gameOver = true;
+        this.gameOverText.visible = true;
+        this.scene.start('Title');
+      }
+    };
+    this.timedEvent = this.time.addEvent({
+      delay: 1000, callback: onEvent, callbackScope: this, loop: true,
+    });
+
     this.scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
     this.gameOverText = this.add.text(400, 300, 'Game Over', { fontSize: '64px', fill: '#000' });
     this.gameOverText.setOrigin(0, 0);
     this.gameOverText.visible = false;
   }
+
 
   createMovingPlatforms() {
     this.movingPlatform = this.physics.add.image(0, 250, 'platform');
