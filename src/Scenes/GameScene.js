@@ -1,7 +1,7 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable import/no-unresolved */
 import Phaser from 'phaser';
-import storeCoins from '../localStorage';
+import { storeCoins } from '../localStorage';
 
 
 const randomInt = (min, max) => Math.floor(Math.random()
@@ -25,7 +25,7 @@ export default class GameScene extends Phaser.Scene {
     const background = this.add.image(0, 0, 'background');
     background.setOrigin(0, 0);
 
-    this.createMovingPlatforms();
+    this.createMovingPlatform();
     this.createPlatforms();
     this.createRoshan();
     this.createCursor();
@@ -58,7 +58,7 @@ export default class GameScene extends Phaser.Scene {
   }
 
 
-  createMovingPlatforms() {
+  createMovingPlatform() {
     this.movingPlatform = this.physics.add.image(0, 250, 'platform');
     this.movingPlatform.body.allowGravity = false;
     this.movingPlatform.setImmovable(true);

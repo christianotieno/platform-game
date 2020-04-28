@@ -4,8 +4,8 @@
 import Phaser from 'phaser';
 import config from '../Config/config';
 import Button from '../Objects/Button';
-import getCurrentCoins from '../localStorage';
-import submitScore from '../api';
+import { getCurrentCoins } from '../localStorage';
+import { submitScore } from '../api';
 
 
 export default class GameOverScene extends Phaser.Scene {
@@ -40,14 +40,14 @@ export default class GameOverScene extends Phaser.Scene {
 
 
     this.username = '';
-    const player = document.createElement('div');
+    const div = document.createElement('div');
 
     div.innerHTML = `
-    <input type="text" id="playerName" name="playerName" placeholder="Your name"><br><br>
+    <input type="text" id="playerName" name="playerName" placeholder="Enter your name: " required><br><br>
     <input type="submit" name="submit" value="Submit Score!">
     `;
 
-    const element = this.add.dom(300, 300, player);
+    const element = this.add.dom(300, 300, div);
     element.addListener('click');
     element.on('click', (event) => {
       if (event.target.name === 'submit') {
@@ -60,6 +60,7 @@ export default class GameOverScene extends Phaser.Scene {
           this.submit = submitScore(this.username, coin);
           this.submit.then(() => { this.scene.start('LeadersBoard'); });
         }
+        // else {}
       }
     });
   }

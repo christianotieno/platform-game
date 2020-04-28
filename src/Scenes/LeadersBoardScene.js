@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import Phaser from 'phaser';
 import Button from '../Objects/Button';
-import getScoreBoard from '../api';
+import { getScoreBoard } from '../api';
 
 export default class LeadersBoardScene extends Phaser.Scene {
   constructor() {

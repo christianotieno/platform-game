@@ -1,4 +1,4 @@
-# platform-game: A Javascript Capstone Project
+# Javascript Capstone Project
 
 > This game is all about Roshan, the treasure hunter.
 
@@ -6,7 +6,7 @@
 
 ## 1. Getting Started: Additional description about the project and its features
 
-This project is configured to be as simple as possible; build, deploy, and play with all with npm.
+This project is configured to be as simple as possible; build, deploy, and play with, all with npm.
 
 ## 2. Built With
 
@@ -16,9 +16,9 @@ This project is configured to be as simple as possible; build, deploy, and play 
 - EcmaScript 6.
 - Chrome web Browser.
 - Heroku for deployment.
+- Jest framework for tests purposes.
 - Eslint for linter checks and style guides.
-- Jest framwork for tests for tests purposes.
-- API LeadersBoard Service - for the scores leaders board.
+- API LeadersBoard Service - for the scores' leaders board.
 
 ## 3. Pre-requisites
 
@@ -33,7 +33,7 @@ This project is configured to be as simple as possible; build, deploy, and play 
 
 ***The only dependencies are NodeJS & npm. Any NodeJS LTS version will work. Simply clone this repo and run npm install.***
 
-- To get a local copy up and running follow these simple example steps.
+- To get a local copy up and running, follow these simple example steps.
 
 ### Setup and installation
 
@@ -83,10 +83,11 @@ npm run test
 | **aboutGame**    | This scene loads when the player presses play in the `TitleScene`. It displays the instructions for the game and the mission ahead.              |
 | **Credits**      | Credits for the game. It gets displayed when the player presses the credits button in the `TitleScene`.                                          |
 | **Game**         | Contains the main logic for the game. Loads after the `aboutScene` loads.                                                                        |
-| **LeadersBoard** | Displays the highscores and their owners. It loads when the game is over.                                                                        |
+| **GameOver**     | Displays the player's scores immediately the game is over and asks user to register their score after which is loads the `LeadersBoardScene`     |
+| **LeadersBoard** | Displays the highscores and their owners. It loads immediately after the `GameOverScene`                                                         |
 | **Options**      | Contains settings for the players to be able to modify in the game (example: mute audio).                                                        |
 
-## 6. Pictorial trips: On more about the feel/look and what the game is all about.
+## 6. Pictorial trips: On more about the feel/look and what the game is all about
 
 | SCENES             | SCREENSHOT |
 | :----              |   :----:   |
@@ -103,7 +104,7 @@ npm run test
 
 👤 **Author**
 
-- Github: [christianotieno](https://github.com/ChristianOtieno)
+- Github: [christianotieno](https://github.com/christianotieno)
 - Twitter: [@iamchrisotieno](https://twitter.com/iamchrisotieno)
 - Linkedin: [Christian Otieno](https://linkedin.com/linkedinhandle)
 
