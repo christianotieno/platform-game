@@ -49,7 +49,7 @@ npm install
 
 ### Play The Game 🕹️
 
-Just run `node server.js` and go to `localhost:8080` in your favorite web browser.
+Just run `npm run start` and go to `localhost:8080` in your favorite web browser.
 
 ### Run linter checks
 
@@ -99,7 +99,7 @@ npm run test
 
 ## 7. Live Play
 
-[Link to Live Play]()
+[Link to Live Play](https://roshan-the-treasure-hunter.netlify.app/)
 
 ## 8. Author Section
 
