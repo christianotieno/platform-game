@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
-import 'phaser';
+/* eslint-disable import/no-unresolved */
+import Phaser from 'phaser';
 
 export default {
   physics: {
