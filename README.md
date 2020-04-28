@@ -49,7 +49,7 @@ npm install
 
 ### Play The Game 🕹️
 
-Just run `npm run start` and go to `localhost:8080` in your favorite web browser.
+Just run `node server.js` and go to `localhost:8080` in your favorite web browser.
 
 ### Run linter checks
 
@@ -122,8 +122,19 @@ Give a ⭐️ if you like this project!
 ## 11. Acknowledgments & Credits
 
 - Hat tip to anyone whose code, sprites/assets, ideas/advice, and knowledge was used.
-- Credits:
-- Inspiration....
+
+### Credits
+
+| Name  | Author | Source |
+| :---- | :---- | :---:  |
+| [Roshan sprite](https://untamed.wild-refuge.net/images/rpgxp/roshan.png) | sithjester (RMXP Resources) | [untamed.wild-refuge.net](https://untamed.wild-refuge.net/images/rpgxp/) |
+| Platforms | phaser site | [phaser.io](https://phaser.io/) |
+|Backgoround Music| phaser site | [phaser.io](https://phaser.io/) |
+| [Wall of large bricks](https://opengameart.org/content/wall-of-large-bricks) | [Wyris](https://opengameart.org/users/wyris) | [opengameart.org](https://opengameart.org/)|
+
+### Inspiration
+
+This game was inspirred by the [endless runner game](https://www.emanueleferonato.com/tag/endless-runner/) (5 parts tutorial). An inspiration was drawn to design a simple but creative game, and implement it using Phaser. Therefore, I did spend some time designing the game before programming it.
 
 ## 12. 📝 License
 
