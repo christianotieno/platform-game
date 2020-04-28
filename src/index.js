@@ -13,10 +13,12 @@ import OptionsScene from './Scenes/OptionsScene';
 import GameOverScene from './Scenes/GameOverScene';
 import PreloaderScene from './Scenes/PreloaderScene';
 import aboutGameScene from './Scenes/aboutGameScene';
+import LeadersBoard from './Scenes/LeadersBoardScene';
 
 class Game extends Phaser.Game {
   constructor() {
     super(config);
+    this.scene.add('LeadersBoard', LeadersBoardScene);
     this.scene.add('Preloader', PreloaderScene);
     this.scene.add('aboutGame', aboutGameScene);
     this.scene.add('GameOver', GameOverScene);

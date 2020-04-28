@@ -1,13 +1,13 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable import/no-unresolved */
 import Phaser from 'phaser';
+import storeCoins from '../localStorage';
 
-function randomInt(min, max) {
-  return Math.floor(Math.random()
+
+const randomInt = (min, max) => Math.floor(Math.random()
   * (Math.floor(max)
   - Math.ceil(min)))
   + Math.ceil(min);
-}
 export default class GameScene extends Phaser.Scene {
   constructor() {
     super('Game');
@@ -31,16 +31,23 @@ export default class GameScene extends Phaser.Scene {
     this.createCursor();
     this.createCoins();
 
-    this.scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
-    this.timerText = this.add.text(0, 100, `Countdown: ${this.initialTime}`, { fill: '#fff' });
+    this.scoreText = this.add.text(
+      16, 16, 'Score: 0',
+      { fontSize: '32px', fill: '#f05123', fontStyle: 'bold' },
+    );
+    this.timerText = this.add.text(
+      550, 16, `Time Lapse: ${this.initialTime}`,
+      { fontSize: '28px', fill: '#eee', fontStyle: 'bold' },
+    );
 
     const onEvent = () => {
       do {
         this.initialTime -= 1;
-        this.timerText.setText(`Countdown: ${this.initialTime}`);
+        this.timerText.setText(`Time Lapse: ${this.initialTime}`);
       }
       while (this.initialTime < 0);
       if (this.initialTime === 0) {
+        storeCoins(this.score);
         this.scene.start('GameOver');
       }
     };
@@ -104,7 +111,7 @@ export default class GameScene extends Phaser.Scene {
   createCoins() {
     this.coins = this.physics.add.group({
       key: 'coin',
-      repeat: randomInt(12, 18),
+      repeat: randomInt(10, 15),
       setXY: {
         x: randomInt(0, 200),
         y: 0,

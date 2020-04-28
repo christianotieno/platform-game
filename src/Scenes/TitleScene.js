@@ -11,18 +11,31 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
-    this.gameName = this.add.text(80, 100, 'Roshan, the treasure hunter', { fontSize: '40px', fill: '#fff' });
+    this.gameName = this.add.text(
+      70, 100, 'Welcome! Have a pick below.',
+      { fontSize: '40px', fill: '#ffcc00', fontStyle: 'bold' },
+    );
 
     // Game
-    this.gameButton = new Button(this, config.width / 2, config.height / 2 - 100, 'blueButton1', 'blueButton2', 'Play', 'aboutGame');
+    this.gameButton = new Button(
+      this, config.width / 2, config.height / 2 - 100,
+      'blueButton1', 'blueButton2', 'Play', 'aboutGame',
+    );
 
     // Options
-    this.optionsButton = new Button(this, config.width / 2, config.height / 2, 'blueButton1', 'blueButton2', 'Options', 'Options');
+    this.optionsButton = new Button(
+      this, config.width / 2, config.height / 2,
+      'blueButton1', 'blueButton2', 'Options', 'Options',
+    );
 
     // Credits
-    this.creditsButton = new Button(this, config.width / 2, config.height / 2 + 100, 'blueButton1', 'blueButton2', 'Credits', 'Credits');
+    this.creditsButton = new Button(
+      this, config.width / 2, config.height / 2 + 100,
+      'blueButton1', 'blueButton2', 'Credits', 'Credits',
+    );
 
     this.model = this.sys.game.globals.model;
+
     if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
       this.bgMusic = this.sound.add('bgMusic', { volume: 0.5, loop: true });
       this.bgMusic.play();

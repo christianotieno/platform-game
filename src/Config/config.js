@@ -14,7 +14,7 @@ export default {
   pixelArt: true,
   type: Phaser.AUTO,
   parent: 'phaser-game',
-  title: 'sinking dungeon',
-  backgroundColor: 0x000000,
+  backgroundColor: 0x003366,
   dom: { createContainer: true },
+  title: 'Roshan, the treasure hunter.',
 };
