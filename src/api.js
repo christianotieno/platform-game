@@ -64,6 +64,6 @@ const getScoreBoard = async () => {
   return sorting(answer.result);
 };
 
-module.exports = {
+export {
   submitScore, createGame, getScoreBoard,
 };
