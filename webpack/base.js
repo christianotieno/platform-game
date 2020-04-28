@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -29,6 +28,14 @@ module.exports = {
         test: /\.(png|svg|jpe?g|gif|xml)$/,
         use: 'file-loader',
       },
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
+      },
     ],
   },
   plugins: [
@@ -41,6 +48,9 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({ 
       template: './src/template.html' 
+    }),
+    new MiniCssExtractPlugin({ 
+      filename: '[name].[contenthash].css' 
     }),
   ],
 };

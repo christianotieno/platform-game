@@ -1,7 +1,8 @@
-const merge = require('webpack-merge');
 const path = require('path');
-const TerserPlugin = require('terser-webpack-plugin');
 const base = require('./base');
+const merge = require('webpack-merge');
+const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = merge(base, {
   mode: 'production',
@@ -23,6 +24,7 @@ module.exports = merge(base, {
           },
         },
       }),
+      new OptimizeCssAssetsPlugin(),
     ],
   },
 });

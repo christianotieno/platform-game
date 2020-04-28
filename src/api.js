@@ -1,3 +1,4 @@
+import 'regenerator-runtime';
 
 const fetch = require('node-fetch');
 
@@ -17,6 +18,7 @@ const createGame = async () => {
   };
   const response = await fetch(address, settings);
   const result = await response.json();
+  // console.log(result);
   return result;
 };
 
@@ -26,7 +28,7 @@ const submitScore = async (name, score) => {
     score,
   };
   const post = JSON.stringify(submit);
-  const address = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/RLZGmV5iEM8dDbc4DuYK/scores/';
+  const address = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/oiYIiKvJUkseROpwmkrP/scores/';
   const settings = {
     method: 'POST',
     headers: {
@@ -49,7 +51,7 @@ const sorting = (obj) => {
 };
 
 const getScoreBoard = async () => {
-  const address = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/RLZGmV5iEM8dDbc4DuYK/scores/';
+  const address = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/oiYIiKvJUkseROpwmkrP/scores/';
   const settings = {
     method: 'GET',
     headers: {

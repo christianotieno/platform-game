@@ -22,14 +22,20 @@ export default class GameOverScene extends Phaser.Scene {
     );
 
     this.displayCoinsCollected = this.add.text(
-      200, 200, 'You managed to collect coins',
+      200, 100, `You managed to collect ${coin} coins`,
       { fontSize: '32px', fill: '#1a578f', fontFamily: 'ariel' },
     );
 
-    this.menuButton = new Button(
-      this, 400, 400, 'blueButton1', 'blueButton2', 'Menu', 'Title',
+    this.displayRecordScore = this.add.text(
+      150, 150, 'To save your score, enter your name below.',
+      { fontSize: '32px', fill: '#1a578f', fontFamily: 'ariel' },
     );
-    this.add.image(400, 270, 'roshan');
+
+    this.add.image(400, 250, 'roshan');
+
+    this.menuButton = new Button(
+      this, 400, 550, 'blueButton1', 'blueButton2', 'Menu', 'Title',
+    );
 
     this.zone = this.add.zone(
       config.width / 2,
@@ -37,17 +43,14 @@ export default class GameOverScene extends Phaser.Scene {
       config.width,
       config.height,
     );
-
-
-    this.username = '';
     const div = document.createElement('div');
 
     div.innerHTML = `
-    <input type="text" id="playerName" name="playerName" placeholder="Enter your name: " required><br><br>
-    <input type="submit" name="submit" value="Submit Score!">
+    <input type="text" id="playerName" name="playerName" placeholder="Enter your name: " class="form-control" required><br>
+    <input type="submit" name="submit" value="Submit Score!" class="btn btn-warning">
     `;
 
-    const element = this.add.dom(300, 300, div);
+    const element = this.add.dom(550, 400, div);
     element.addListener('click');
     element.on('click', (event) => {
       if (event.target.name === 'submit') {
@@ -60,7 +63,6 @@ export default class GameOverScene extends Phaser.Scene {
           this.submit = submitScore(this.username, coin);
           this.submit.then(() => { this.scene.start('LeadersBoard'); });
         }
-        // else {}
       }
     });
   }

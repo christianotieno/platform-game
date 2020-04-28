@@ -3,6 +3,7 @@ import Phaser from 'phaser';
 import Button from '../Objects/Button';
 import { getScoreBoard } from '../api';
 
+
 export default class LeadersBoardScene extends Phaser.Scene {
   constructor() {
     super('LeadersBoard');
@@ -10,9 +11,23 @@ export default class LeadersBoardScene extends Phaser.Scene {
 
   create() {
     this.getScores = getScoreBoard();
-    this.topScorers = this.add.text(280, 50, 'Top 10 Scores', { fontSize: '32px', fill: '#fff' });
-    this.optionsMenu = new Button(this, 150, 550, 'blueButton1', 'blueButton2', 'Menu', 'Title');
-    this.geralData = [];
+    this.topScorers = this.add.text(
+      280, 50, 'Top 10 Scores',
+      {
+        fontSize: '32px',
+        fill: '#eee',
+        fontStyle: 'bold',
+      },
+    );
+
+    this.optionsMenu = new Button(
+      this, 400, 550,
+      'blueButton1',
+      'blueButton2',
+      'Menu',
+      'Title',
+    );
+    this.leadersData = [];
 
     let table;
 
@@ -30,21 +45,53 @@ export default class LeadersBoardScene extends Phaser.Scene {
     };
 
     this.getScores.then((scores) => {
-      this.geralData.push(this.getItems(scores));
+      this.leadersData.push(this.getItems(scores));
 
       let i = 1;
       let container;
       const newCellObject = (scene, cell) => {
-        const bg = scene.add.graphics()
-          .fillStyle(0x555555)
+        const background = scene.add.graphics()
+          .fillStyle(0x003366)
           .fillRect(2, 2, 200 - 2, 40 - 2);
-        const txt = scene.add.text(10, 20, cell.index + 1);
-        if (this.geralData[0][i - 1] !== undefined) {
-          const txt1 = scene.add.text(150, 20, this.geralData[0][i - 1]);
-          const txt2 = scene.add.text(30, 20, this.geralData[0][i].substring(0, 10));
-          container = scene.add.container(0, 0, [bg, txt, txt1, txt2]);
+
+        const txt = scene.add.text(
+          10, 20, cell.index + 1,
+          {
+            fontSize: '16px',
+            fill: '#eee',
+            fontStyle: 'bold',
+          },
+        );
+
+        if (this.leadersData[0][i - 1] !== undefined) {
+          const txt1 = scene.add.text(
+            150, 20,
+            this.leadersData[0][i - 1],
+            {
+              fontSize: '16px',
+              fill: '#ffcc00',
+              fontStyle: 'bold',
+            },
+          );
+
+          const txt2 = scene.add.text(
+            30, 20,
+            this.leadersData[0][i].substring(0, 10),
+            {
+              fontSize: '16px',
+              fill: '#ffcc00',
+              fontStyle: 'bold',
+            },
+          );
+          container = scene.add.container(
+            0, 0,
+            [background, txt, txt1, txt2],
+          );
         } else {
-          container = scene.add.container(0, 0, [bg, txt]);
+          container = scene.add.container(
+            0, 0,
+            [background, txt],
+          );
         }
         i += 2;
         return container;
@@ -54,14 +101,16 @@ export default class LeadersBoardScene extends Phaser.Scene {
         cell.setContainer(newCellObject(this, cell));
       };
 
-      table = this.add.rexGridTable(425, 300, 250, 405, {
-        cellWidth: 200,
-        cellHeight: 40,
-        cellsCount: 10,
-        columns: 1,
-        cellVisibleCallback: onCellVisible.bind(this),
-        clamplTableOXY: false,
-      });
+      table = this.add.rexGridTable(
+        425, 300, 250, 405, {
+          cellWidth: 200,
+          cellHeight: 40,
+          cellsCount: 10,
+          columns: 1,
+          cellVisibleCallback: onCellVisible.bind(this),
+          clamplTableOXY: false,
+        },
+      );
 
       this.table = table;
     });
@@ -70,7 +119,7 @@ export default class LeadersBoardScene extends Phaser.Scene {
   ready() {
     this.load.on('complete', () => {
       this.table.destroy();
-      this.geralData.destroy();
+      this.leadersData.destroy();
       this.optionsMenu.destroy();
       this.getScores.destroy();
       this.topScorers.destroy();

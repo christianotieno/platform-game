@@ -6,19 +6,19 @@
 
 ## 1. Getting Started: Additional description about the project and its features
 
-This project is configured to be as simple as possible; build, deploy, and play with, all with npm.
+> This project is configured to be as simple as possible; build, deploy, and play with, all with npm.
 
 ## 2. Built With
 
-- Webpack.
-- HTML/DOM.
-- Phaser 3.
-- EcmaScript 6.
-- Chrome web Browser.
-- Heroku for deployment.
-- Jest framework for tests purposes.
-- Eslint for linter checks and style guides.
-- API LeadersBoard Service - for the scores' leaders board.
+- [EcmaScript 6.](https://www.w3schools.com/js/js_es6.asp)
+- [Chrome web Browser.](https://www.google.com/chrome/?brand=CHBD&gclid=CjwKCAjwqJ_1BRBZEiwAv73uwMy_V_6pha6yTVEa8JtU5T51QdyxZOVnsXlRndK05hSO4bSM6muP5RoC2E4QAvD_BwE&gclsrc=aw.ds)
+- [Heroku](https://www.heroku.com/) for deployment.
+- [Webpack](https://webpack.js.org/) for bundling files.
+- [Phaser 3](https://phaser.io/) - HTML5 framework.
+- [Jest](https://jestjs.io/) framework for tests purposes.
+- [HTML/DOM](https://www.w3schools.com/js/js_htmldom.asp) - Manipulation for UI.
+- [Eslint](https://eslint.org/) for linter checks and style guides.
+- [Leaderboard API service](https://www.notion.so/Leaderboard-API-service-24c0c3c116974ac49488d4eb0267ade3) for the scores' leaders board.
 
 ## 3. Pre-requisites
 
@@ -89,12 +89,13 @@ npm run test
 
 ## 6. Pictorial trips: On more about the feel/look and what the game is all about
 
-| SCENES             | SCREENSHOT |
-| :----              |   :----:   |
-| `aboutScene`       | ![aboutScene](./src/assets/images/aboutScene.png)       |
-| `CreditsScene`     | ![CreditsScene](./src/assets/images/CreditsScene.png)   |
-| `GameOverScene`    | ![GameOverScene](./src/assets/images/GameOverScene.png) |
-| `OptionsScene`     | ![OptionsScene](./src/assets/images/OptionsScene.png)   |
+| SCENES              | SCREENSHOT |
+| :----               |   :----:   |
+| `aboutScene`        | ![aboutScene](./src/assets/images/aboutScene.png)           |
+| `CreditsScene`      | ![CreditsScene](./src/assets/images/CreditsScene.png)       |
+| `GameOverScene`     | ![GameOverScene](./src/assets/images/GameOverScene.png)     |
+| `LeadersBoardScene` | ![GameOverScene](./src/assets/images/LeadersBoardScene.png) |
+| `OptionsScene`      | ![OptionsScene](./src/assets/images/OptionsScene.png)       |
 
 ## 7. Live Play
 
@@ -106,7 +107,7 @@ npm run test
 
 - Github: [christianotieno](https://github.com/christianotieno)
 - Twitter: [@iamchrisotieno](https://twitter.com/iamchrisotieno)
-- Linkedin: [Christian Otieno](https://linkedin.com/linkedinhandle)
+- LinkedIn: [Christian Otieno](https://www.linkedin.com/in/christianotieno/)
 
 ## 9. 🤝 Contributing
 
