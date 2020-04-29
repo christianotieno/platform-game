@@ -1,12 +1,20 @@
+<center>
+
 # Javascript Capstone Project
+
+</center>
+<div style="text-align:center">
 
 > This game is all about Roshan, the treasure hunter.
 
 ![GameScene](./src/assets/images/GameScene.png)
+</div>
 
 ## 1. Getting Started: Additional description about the project and its features
 
-> This project is configured to be as simple as possible; build, deploy, and play with, all with npm.
+<center>
+This project is configured to be as simple as possible; build, deploy, and play with, all with npm.
+</center>
 
 ## 2. Built With
 
@@ -63,6 +71,14 @@ npx eslint .
 npm run test
 ```
 
+### Deployment
+
+|  APP NAME | BUILD STATUS: |
+|   :---:   |    :---:     |
+|**Roshan, the treasure hunter** | [![Netlify Status](https://api.netlify.com/api/v1/badges/0d94a6a5-0bff-4306-95df-13e98680eccb/deploy-status)](https://app.netlify.com/sites/roshan-the-treasure-hunter/deploys) |
+
+---
+
 ## 4. Game Development Guidelines & Timelines
 
 | TIMELINE    |  TODO  |  DESCRIPTION  |    OUTCOME   |  STATUS   |
@@ -72,6 +88,7 @@ npm run test
 | Day 3       |Game Development| Game Development following the defined design|  Game Logic             |&#9745;|
 | Day 4       |Game Development| Game Development following the defined design|  Game Interface         |&#9745;|
 | Day 5       |Game Documentation| Game Documentation following the defined design|  Game Documentation |&#9745;|
+---
 
 ## 5. Game Scenes & Their Work Descriptions
 
@@ -86,6 +103,7 @@ npm run test
 | **GameOver**     | Displays the player's scores immediately the game is over and asks user to register their score after which is loads the `LeadersBoardScene`     |
 | **LeadersBoard** | Displays the highscores and their owners. It loads immediately after the `GameOverScene`                                                         |
 | **Options**      | Contains settings for the players to be able to modify in the game (example: mute audio).                                                        |
+---
 
 ## 6. Pictorial trips: On more about the feel/look and what the game is all about
 
@@ -96,10 +114,13 @@ npm run test
 | `GameOverScene`     | ![GameOverScene](./src/assets/images/GameOverScene.png)     |
 | `LeadersBoardScene` | ![GameOverScene](./src/assets/images/LeadersBoardScene.png) |
 | `OptionsScene`      | ![OptionsScene](./src/assets/images/OptionsScene.png)       |
+---
 
 ## 7. Live Play
 
 [Link to Live Play](https://roshan-the-treasure-hunter.netlify.app/)
+
+---
 
 ## 8. Author Section
 
@@ -109,19 +130,27 @@ npm run test
 - Twitter: [@iamchrisotieno](https://twitter.com/iamchrisotieno)
 - LinkedIn: [Christian Otieno](https://www.linkedin.com/in/christianotieno/)
 
+---
+
 ## 9. 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/ChristianOtieno/platform-game/issues).
 
+---
+
 ## 10. Show your support
 
 Give a ⭐️ if you like this project!
 
+---
+
 ## 11. Acknowledgments & Credits
 
 - Hat tip to anyone whose code, sprites/assets, ideas/advice, and knowledge was used.
+
+---
 
 ### Credits
 
@@ -132,10 +161,16 @@ Give a ⭐️ if you like this project!
 |Backgoround Music| phaser site | [phaser.io](https://phaser.io/) |
 | [Wall of large bricks](https://opengameart.org/content/wall-of-large-bricks) | [Wyris](https://opengameart.org/users/wyris) | [opengameart.org](https://opengameart.org/)|
 
+---
+
 ### Inspiration
 
 This game was inspirred by the [endless runner game](https://www.emanueleferonato.com/tag/endless-runner/) (5 parts tutorial). An inspiration was drawn to design a simple but creative game, and implement it using Phaser. Therefore, I did spend some time designing the game before programming it.
 
+---
+
 ## 12. 📝 License
 
 This project is [MIT](https://opensource.org/licenses/MIT) licensed.
+
+---
