@@ -2,6 +2,7 @@
 /* eslint-disable import/no-unresolved */
 import Phaser from 'phaser';
 import config from '../Config/config';
+import GameScene from './GameScene';
 
 export default class PreGameScene extends Phaser.Scene {
   constructor() {
@@ -14,6 +15,9 @@ export default class PreGameScene extends Phaser.Scene {
     this.gameContext2 = this.add.text(50, 200, 'He has to collect as many coins as possible to achieve this feat.', { fontSize: '17px', fill: '#adf0d1' });
     this.gameContext3 = this.add.text(50, 250, 'As for the time, he has not much of it. Help him succeed.', { fontSize: '17px', fill: '#adf0d1' });
     this.gameContext4 = this.add.text(50, 300, 'Use the arrow keys to move up the platforms.', { fontSize: '20px', fill: '#eee', fontStyle: 'bold' });
+
+    // add game scene
+    this.scene.add('Game', GameScene);
 
     this.zone = this.add.zone(config.width / 2, config.height / 2, config.width, config.height);
 

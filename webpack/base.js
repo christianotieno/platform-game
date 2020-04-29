@@ -2,8 +2,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
-// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
@@ -41,15 +39,6 @@ module.exports = {
     ],
   },
   plugins: [
-    // new CopyWebpackPlugin([
-    //     { 
-    //       from: '../src/assets', 
-    //       to: '../dist' 
-    //     },
-    //   ]),
-    // new CleanWebpackPlugin({
-    //   root: path.resolve(__dirname, "../")
-    // }),
     new webpack.DefinePlugin({
       CANVAS_RENDERER: JSON.stringify(true),
       WEBGL_RENDERER: JSON.stringify(true),

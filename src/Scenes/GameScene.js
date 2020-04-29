@@ -48,6 +48,7 @@ export default class GameScene extends Phaser.Scene {
       while (this.initialTime < 0);
       if (this.initialTime === 0) {
         storeCoins(this.score);
+        this.scene.remove('Game');
         this.scene.start('GameOver');
       }
     };
