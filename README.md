@@ -12,7 +12,7 @@
 
 - [EcmaScript 6.](https://www.w3schools.com/js/js_es6.asp)
 - [Chrome web Browser.](https://www.google.com/chrome/?brand=CHBD&gclid=CjwKCAjwqJ_1BRBZEiwAv73uwMy_V_6pha6yTVEa8JtU5T51QdyxZOVnsXlRndK05hSO4bSM6muP5RoC2E4QAvD_BwE&gclsrc=aw.ds)
-- [Heroku](https://www.heroku.com/) for deployment.
+- [Netlify](https://www.netlify.com/) for deployment.
 - [Webpack](https://webpack.js.org/) for bundling files.
 - [Phaser 3](https://phaser.io/) - HTML5 framework.
 - [Jest](https://jestjs.io/) framework for tests purposes.
