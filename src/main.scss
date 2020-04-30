@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import '~bootstrap/scss/bootstrap';
+
+
+html, body {
+  background-color: #000;
+  font-family: 'Comfortaa' !important;
+  font-style: italic;
+  font-weight: bolder;
+}
+
+#title-header, #footer-text {
+  color: #eee;
+  margin: 25px auto;
+}
+.container{
+border-radius: 25px;
+border: 1px solid #eee;
+}
+

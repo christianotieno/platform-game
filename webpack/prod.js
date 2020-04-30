@@ -1,12 +1,15 @@
-const merge = require('webpack-merge');
+/* eslint-disable */
 const path = require('path');
-const TerserPlugin = require('terser-webpack-plugin');
 const base = require('./base');
+const merge = require('webpack-merge');
+const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = merge(base, {
   mode: 'production',
+
   output: {
-    filename: 'bundle.min.js',
+    filename: 'bundle.min.js'
   },
   devtool: false,
   performance: {
@@ -22,6 +25,7 @@ module.exports = merge(base, {
           },
         },
       }),
+      new OptimizeCssAssetsPlugin(),
     ],
   },
 });

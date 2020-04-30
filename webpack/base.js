@@ -1,7 +1,8 @@
-const webpack = require('webpack');
+/* eslint-disable */
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: 'development',
@@ -16,25 +17,37 @@ module.exports = {
         },
       },
       {
+        test: /\.html$/,
+        use: 'html-loader',
+      },
+      {
         test: [/\.vert$/, /\.frag$/],
         use: 'raw-loader',
       },
       {
-        test: /\.(gif|png|jpe?g|svg|xml)$/i,
+        test: /\.(png|svg|jpe?g|gif|xml)$/,
         use: 'file-loader',
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
       },
     ],
   },
   plugins: [
-    new CleanWebpackPlugin({
-      root: path.resolve(__dirname, '../'),
-    }),
     new webpack.DefinePlugin({
       CANVAS_RENDERER: JSON.stringify(true),
       WEBGL_RENDERER: JSON.stringify(true),
     }),
-    new HtmlWebpackPlugin({
-      template: './index.html',
+    new HtmlWebpackPlugin({ 
+      template: './src/template.html' 
+    }),
+    new MiniCssExtractPlugin({ 
+      filename: '[name].[contenthash].css' 
     }),
   ],
 };
