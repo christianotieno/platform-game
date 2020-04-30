@@ -164,6 +164,6 @@ This game was inspirred by the [endless runner game](https://www.emanueleferonat
 
 ## 12. 📝 License
 
-This project is [MIT](https://opensource.org/licenses/MIT) licensed.
+This project is [MIT](https://github.com/christianotieno/platform-game/blob/develop/LICENSE) licensed.
 
 ---
