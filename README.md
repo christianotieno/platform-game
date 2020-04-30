@@ -1,20 +1,13 @@
-<center>
 
 # Javascript Capstone Project
-
-</center>
-<div style="text-align:center">
 
 > This game is all about Roshan, the treasure hunter.
 
 ![GameScene](./src/assets/images/GameScene.png)
-</div>
 
 ## 1. Getting Started: Additional description about the project and its features
 
-<center>
 This project is configured to be as simple as possible; build, deploy, and play with, all with npm.
-</center>
 
 ## 2. Built With
 
