@@ -117,7 +117,7 @@ npm run test
 
 ## 8. Author Section
 
-👤 **Author**
+👤 **Christian Otieno**
 
 - Github: [christianotieno](https://github.com/christianotieno)
 - Twitter: [@iamchrisotieno](https://twitter.com/iamchrisotieno)
