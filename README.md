@@ -158,7 +158,7 @@ Give a ⭐️ if you like this project!
 
 ### Inspiration
 
-This game was inspirred by the [endless runner game](https://www.emanueleferonato.com/tag/endless-runner/) (5 parts tutorial). An inspiration was drawn to design a simple but creative game, and implement it using Phaser. Therefore, I did spend some time designing the game before programming it.
+This game was inspired by the [endless runner game](https://www.emanueleferonato.com/tag/endless-runner/) (5 parts tutorial). Inspiration was drawn to design a simple but creative game, and implement it using Phaser. Therefore, I did spend some time designing the game before programming it.
 
 ---
 
