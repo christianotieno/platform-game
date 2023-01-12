@@ -52,7 +52,7 @@
     "milsymbol": "^2.0.0",
     "node-fetch": "^2.6.7",
     "phaser": "^3.22.0",
-    "phaser3-rex-plugins": "^1.1.13",
+    "phaser3-rex-plugins": "^1.1.79",
     "regenerator-runtime": "^0.13.5"
   }
 }
